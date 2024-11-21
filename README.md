@@ -37,10 +37,16 @@ O jogo contará com algumas mecânicas, sendo elas: pontuação, hordas de inimi
 As classes do jogo são: "Jogador", "Inimigo", "Wave" e "Menu". Abaixo estará melhor detalhadas essas classes:
 
 - Jogador:
+ Agora, a classe jogador serve como um molde para o nosso player, atribuindo já dentro do próprio código a vida e o dano do mesmo, os quais serão fixos por toda a jogatina. 
+
+- Inimigo:
+ A classe inimigo, no contexto de nosso jogo, serve para fornecer algumas informações do que serão os inimigos do jogo: dano, vida, etc. A vida do jogador é puxada para essa classe para ser efetuado o cálculo do dano causado pelo inimigo. Além disso, também conta com as linhas de códigos que geram os projéteis do jogo.
 
 - Wave:
+ A wave serve como uma forma de monitorar e administrar o Spawn do prefab do inimigo, utilizando-se de um atributo Boolean para identificar a passagem de waves e permitir a criação de novas instâncias do prefab já determinado. Além disso, permite variar os atributos de e vida do inimigo com o intuito de variar um pouco a dificuldade para eliminar cada um. Sempre que se passa uma horda no jogo, o valor de prefabs é multiplicado por um valor fixo e assim, cria novas instâncias.
 
 - Menu:
+ A classe menu serve unicamente para identificar os cliques do jogador no nosso menu e assim atribuir a cena do botão respectivo.
 <br>
 
 
