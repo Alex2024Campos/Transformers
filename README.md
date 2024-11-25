@@ -60,13 +60,13 @@ lore
 
 # UI do Jogo:
 - Menu inicial
- Foi feito um Canvas para fazer o menu inicial, o qual pelo seu nome deixa a entender, será o primeiro que o jogador verá e permitirá que o mesmo escolha entre começar a jogatina ou sair do nosso jogo.
+ Foi feito um Canvas para fazer o menu inicial, o qual pelo seu nome deixa a entender, será o primeiro que o jogador verá e permitirá que o mesmo escolha entre começar a jogatina ou sair do nosso jogo. 
 
 - Menu pausa 
- O menu de pausa terá a única função de permitir que o nosso player consiga pausar o jogo quando quiser ou precisar. É um Canvas que é chamado quando a tecla "Esc" é clicada e que desaparece quando "Tab" é pressionado.
+ O menu de pausa terá a única função de permitir que o nosso player consiga pausar o jogo quando quiser ou precisar. É um Canvas que é chamado quando a tecla "Esc" é clicada e que desaparece quando "Tab" é pressionado. O código está presente no script do jogador.
 
 - Menu gameover
- Como é de se imaginar, perder o nosso jogo, ou seja, chegar ao valor 0 de vidas, fará a ação de puxar o menu de gameover e permitirá o jogador decidir se vai reiniciar o jogo ou voltar ao menu inicial.
+ Como é de se imaginar, perder o nosso jogo, ou seja, chegar ao valor 0 de vidas, fará a ação de puxar o menu de gameover e permitirá o jogador decidir se vai reiniciar o jogo ou voltar ao menu inicial. Ocódigo está presente no script do jogador.
 <br>
 
 # Paleta de Cor do Jogo:
