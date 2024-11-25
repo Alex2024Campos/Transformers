@@ -45,8 +45,8 @@ As classes do jogo são: "Jogador", "Inimigo", "Wave" e "Menu". Abaixo estará m
 - Wave:
  A wave serve como uma forma de monitorar e administrar o Spawn do prefab do inimigo, utilizando-se de um atributo Boolean para identificar a passagem de waves e permitir a criação de novas instâncias do prefab já determinado. Além disso, permite variar os atributos de e vida do inimigo com o intuito de variar um pouco a dificuldade para eliminar cada um. Sempre que se passa uma horda no jogo, o valor de prefabs é multiplicado por um valor fixo e assim, cria novas instâncias.
 
-- Menu:
- A classe menu serve unicamente para identificar os cliques do jogador no nosso menu e assim atribuir a cena do botão respectivo.
+- UI:
+ A classe menu serve unicamente para identificar os cliques do jogador no nosso menu e assim atribuir a cena do botão respectivo. 
 <br>
 
 
@@ -54,14 +54,23 @@ _________________________________________________________________
 
 # Codificação do Jogo:
 lore
+
+
 <br>
 
 # UI do Jogo:
-lore
+- Menu inicial
+ Foi feito um Canvas para fazer o menu inicial, o qual pelo seu nome deixa a entender, será o primeiro que o jogador verá e permitirá que o mesmo escolha entre começar a jogatina ou sair do nosso jogo.
+
+- Menu pausa 
+ O menu de pausa terá a única função de permitir que o nosso player consiga pausar o jogo quando quiser ou precisar. É um Canvas que é chamado quando a tecla "Esc" é clicada e que desaparece quando "Tab" é pressionado.
+
+- Menu gameover
+ Como é de se imaginar, perder o nosso jogo, ou seja, chegar ao valor 0 de vidas, fará a ação de puxar o menu de gameover e permitirá o jogador decidir se vai reiniciar o jogo ou voltar ao menu inicial.
 <br>
 
 # Paleta de Cor do Jogo:
-lore
+- Junção de cores cinzas com cores mais chamativas e claras.
 <br>
 
 _________________________________________________________________
