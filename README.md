@@ -91,6 +91,16 @@ _________________________________________________________________
 - No ambiente sombrio e desbotado do depósito, o amarelo vibrante de nosso protagonista se destaca e serve como forma de enfatizar sua presença protetora e heroica. O contraste do ambiente com a cor do personagem reforça o seu papel como defensor, trazendo o seu elemento de segurança e confiança visual. Para se contrastar com Bumblebee, teremos o principal inimigo, lacaios Decepticons enviados por Barricade para capturar Sam e que contarão com tons escuros, metálico e ferrugem, passando uma sensação de ameaça constante. As cores frias fazem dele uma figura intimidante e perigosa, especialmente quando combinado com o ambiente sombrio do depósito, destacando seu papel como inimigo e ameaça. Por fim, o cenário é dominado por cores desgastadas e metálicas, com tons de cinza, marrom e ferrugem, criando uma sensação de abandono e isolamento e tornando o confronto entre Bumblebee e os lacaios de Barricade ainda mais intenso.
 
 - Materials de exemplo:
+
+| Material | Hexadecimal |
+| --- | --- |
+| Piso | 708080 |
+| Muro | 1E8063 |
+| Bumbleebe1 | 7D4C30 |
+| Inimigo1 | 747B7A |
+| Menu_Inicial | 7D4C30 |
+| Menu_GameOver | 7D4C30 |
+| Menu_Pausa | 7D4C30 |
 <br>
 
 _________________________________________________________________
