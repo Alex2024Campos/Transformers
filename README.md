@@ -92,15 +92,15 @@ _________________________________________________________________
 
 - Materials de exemplo:
 
-| Material | Hexadecimal |
-| --- | --- |
-| Piso | 708080 |
-| Muro | 1E8063 |
-| Bumbleebe1 | 7D4C30 |
-| Inimigo1 | 747B7A |
-| Menu_Inicial | 7D4C30 |
-| Menu_GameOver | 7D4C30 |
-| Menu_Pausa | 7D4C30 |
+| Textura | Imagem | Hexadecimal |
+| --- | --- | --- |
+| Piso | ![image](https://github.com/user-attachments/assets/36cd2cf1-04d5-499f-b256-b538b3e10a46)| 000000 |
+| Muro | ![image](https://github.com/user-attachments/assets/115e2b22-88a5-4480-989f-83d79701bc28)| 868080 |
+| Bumbleebe1 | ![image](https://github.com/user-attachments/assets/179cd790-02c5-4827-aa7a-b3964f78cad9)| FFFD00 |
+| Inimigo1 | 747B7A | Menu_GameOver |
+| Menu_Inicial | ![image](https://github.com/user-attachments/assets/ff84eed9-bca4-49c1-9386-ca5840443d65)| N/A |
+| Menu_GameOver | ![image](https://github.com/user-attachments/assets/439f1145-9765-4702-9bbb-64204148cafa)| N/A |
+| Menu_Pausa | ![image](https://github.com/user-attachments/assets/95560d2f-24c2-4b18-847e-a53436f3ba41)| N/A|
 <br>
 _________________________________________________________________
 
