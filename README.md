@@ -31,8 +31,6 @@ O jogo contará com algumas mecânicas, sendo elas: pontuação, hordas de inimi
  - Pontuação: Cada inimigo destruído pelo nosso jogador, nesse caso o Autobot, gerará pontos para o mesmo. O objetivo do jogador é se manter vivo enquanto tenta atingir o máximo de pontuação possível.
    
  - Hordas de inimigos: Um sistema de "wave", o qual ditará a quantidade de inimigos que serão gerados durante a cena com base no valor atual da horda, o qual se altera com base na destruição de todos os inimigos na cena. Ou seja, sempre que você eliminar uma horda de inimigos inteira, a wave terá o acrescento de +1, multiplicando a quantidade de inimigos presentes no mapa.
-   
- - Variação de inimigos: De forma resumida e simples, será uma forma de trazer aquele algo a mais ao jogo. Os inimigos gerados, então, estarão causando uma quantidade de dano diferente de um para outro, além de carregar consigo uma quantidade de vida também aleatória, ou seja, dentro dos limites impostos por nós, os adversários do jogador poderão contar com mais ou menos vida e dano, servindo então ou como um dificultor ou como um facilitador do jogo.
 <br>
 
 # Classes do Jogo:
