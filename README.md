@@ -13,7 +13,9 @@
 
 > [!NOTE]
  > `- Alterações do Jogo:`
- >- `Nenhuma ainda.`
+ >- `Acrescento de um projétil.`
+ >- `Exclusão dos estilos de luta e variação do inimigo (mudar vida, etc).`
+>- `Mudança nos principais personagens.`
 
 > [!NOTE]
 >- `Gameplay`:
@@ -102,6 +104,22 @@ _________________________________________________________________
 | Menu_GameOver | 7D4C30 |
 | Menu_Pausa | 7D4C30 |
 <br>
+_________________________________________________________________
+
+# Diagrama UML:
+
+- Jogador1:
+(Associação -----> UI. Jogador precisa apertar algo pra rodar o jogo).
+
+- Inimigo:
+(Associação Inimigo <-----> Jogador. Precisa do jogador pra existir).
+
+- Wave:
+Associação (Wave <-----> Inimigo. Inimigo precisa de uma Wave pra nascer e Wave precisa do Inimigo).
+
+- UI: 
+
+
 
 _________________________________________________________________
 
