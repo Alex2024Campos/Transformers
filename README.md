@@ -53,26 +53,46 @@ As classes do jogo são: "Jogador", "Inimigo", "Wave" e "Menu". Abaixo estará m
 _________________________________________________________________
 
 # Codificação do Jogo:
-lore
 
+- Inimigo:
+```csharp
 
+```
+
+- Jogador:
+```csharp
+
+```
+
+- Wave:
+```csharp
+
+```
+
+- UI:
+```csharp
+
+```
 <br>
 
 # UI do Jogo:
 - Menu inicial
- Foi feito um Canvas para fazer o menu inicial, o qual pelo seu nome deixa a entender, será o primeiro que o jogador verá e permitirá que o mesmo escolha entre começar a jogatina ou sair do nosso jogo. 
+ Foi feito um Canvas para fazer o menu inicial, o qual pelo seu nome deixa a entender, será o primeiro que o jogador verá e permitirá que o mesmo escolha entre começar a jogatina ou sair do nosso jogo. Contém um material, o qual foi inserida uma imagem que havia sido feita no Canvas, a sua imagem estará abaixo:
 
 - Menu pausa 
- O menu de pausa terá a única função de permitir que o nosso player consiga pausar o jogo quando quiser ou precisar. É um Canvas que é chamado quando a tecla "Esc" é clicada e que desaparece quando "Tab" é pressionado. O código está presente no script do jogador.
+ O menu de pausa terá a única função de permitir que o nosso player consiga pausar o jogo quando quiser ou precisar. É um Canvas que é chamado quando a tecla "Esc" é clicada e que desaparece quando "Tab" é pressionado. O código está presente no script do jogador. Contém um material, o qual foi inserida uma imagem que havia sido feita no Canvas, a sua imagem estará abaixo:
 
 - Menu gameover
- Como é de se imaginar, perder o nosso jogo, ou seja, chegar ao valor 0 de vidas, fará a ação de puxar o menu de gameover e permitirá o jogador decidir se vai reiniciar o jogo ou voltar ao menu inicial. Ocódigo está presente no script do jogador.
+ Como é de se imaginar, perder o nosso jogo, ou seja, chegar ao valor 0 de vidas, fará a ação de puxar o menu de gameover e permitirá o jogador decidir se vai reiniciar o jogo ou voltar ao menu inicial. Ocódigo está presente no script do jogador. 
 <br>
 
 # Paleta de Cor do Jogo:
-- Junção de cores cinzas com cores mais chamativas e claras.
+- No ambiente sombrio e desbotado do depósito, o amarelo vibrante de nosso protagonista se destaca e serve como forma de enfatizar sua presença protetora e heroica. O contraste do ambiente com a cor do personagem reforça o seu papel como defensor, trazendo o seu elemento de segurança e confiança visual. Para se contrastar com Bumblebee, teremos o principal inimigo, lacaios Decepticons enviados por Barricade para capturar Sam e que contarão com tons escuros, metálico e ferrugem, passando uma sensação de ameaça constante. As cores frias fazem dele uma figura intimidante e perigosa, especialmente quando combinado com o ambiente sombrio do depósito, destacando seu papel como inimigo e ameaça. Por fim, o cenário é dominado por cores desgastadas e metálicas, com tons de cinza, marrom e ferrugem, criando uma sensação de abandono e isolamento e tornando o confronto entre Bumblebee e os lacaios de Barricade ainda mais intenso.
+
+- Materials de exemplo:
 <br>
 
 _________________________________________________________________
 
 # Referências:
+ 
