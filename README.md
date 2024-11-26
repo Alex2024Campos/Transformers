@@ -91,13 +91,14 @@ _________________________________________________________________
 - No ambiente sombrio e desbotado do depósito, o amarelo vibrante de nosso protagonista se destaca e serve como forma de enfatizar sua presença protetora e heroica. O contraste do ambiente com a cor do personagem reforça o seu papel como defensor, trazendo o seu elemento de segurança e confiança visual. Para se contrastar com Bumblebee, teremos o principal inimigo, lacaios Decepticons enviados por Barricade para capturar Sam e que contarão com tons escuros, metálico e ferrugem, passando uma sensação de ameaça constante. As cores frias fazem dele uma figura intimidante e perigosa, especialmente quando combinado com o ambiente sombrio do depósito, destacando seu papel como inimigo e ameaça. Por fim, o cenário é dominado por cores desgastadas e metálicas, com tons de cinza, marrom e ferrugem, criando uma sensação de abandono e isolamento e tornando o confronto entre Bumblebee e os lacaios de Barricade ainda mais intenso.
 
 - Materials de exemplo:
+ Vale ressaltar que os hexadecimais de cada um dos materials são de exemplo e aproximados, pois não foi-se utilizado de um material próprio com uma cor específica no RGB para podemos retirar essa informação e colocar aqui.
 
 | Textura | Imagem | Hexadecimal |
 | --- | --- | --- |
 | Piso | ![image](https://github.com/user-attachments/assets/36cd2cf1-04d5-499f-b256-b538b3e10a46)| 000000 |
 | Muro | ![image](https://github.com/user-attachments/assets/115e2b22-88a5-4480-989f-83d79701bc28)| 868080 |
 | Bumbleebe1 | ![image](https://github.com/user-attachments/assets/179cd790-02c5-4827-aa7a-b3964f78cad9)| FFFD00 |
-| Inimigo1 | 747B7A | Menu_GameOver |
+| Inimigo1 |  ![image](https://github.com/user-attachments/assets/20979302-5573-428b-8ffd-3805a9a2ab7e)  ![image](https://github.com/user-attachments/assets/cd32eb2b-46ec-4502-bf62-e0bf9cf5133a)| 5A5A5A |
 | Menu_Inicial | ![image](https://github.com/user-attachments/assets/ff84eed9-bca4-49c1-9386-ca5840443d65)| N/A |
 | Menu_GameOver | ![image](https://github.com/user-attachments/assets/439f1145-9765-4702-9bbb-64204148cafa)| N/A |
 | Menu_Pausa | ![image](https://github.com/user-attachments/assets/95560d2f-24c2-4b18-847e-a53436f3ba41)| N/A|
