@@ -448,6 +448,7 @@ public class UI : MonoBehaviour
 _________________________________________________________________
 
 # Diagrama UML:
+![Diagrama_UML_Transformers (1)](https://github.com/user-attachments/assets/7359214e-dfe6-4eb3-961c-ed433a527bbe)
 
 _________________________________________________________________
 
