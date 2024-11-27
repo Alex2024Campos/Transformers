@@ -57,22 +57,364 @@ _________________________________________________________________
 
 - Inimigo:
 ```csharp
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
+public class Enemy : MonoBehaviour
+{
+    Animator animator;
+    private float speed = 5f;
+    private CharacterController characterController;
+    public GameObject player;
+    public GameObject explosionEffect; 
+    public float explosionHeightOffset = 1f; 
+    private float gravity = -9.8f;
+    private float verticalVelocity;
+    public Wave waveManager;
+    public Player playerScript;
+
+    [System.Obsolete]
+    void Start()
+    {
+        animator = GetComponent<Animator>();
+        characterController = GetComponent<CharacterController>();
+        playerScript = FindObjectOfType<Player>();
+
+    }
+
+    void Update()
+    {
+       
+
+        Vector3 direction = (player.transform.position - transform.position).normalized;
+
+        Quaternion lookRotation = Quaternion.LookRotation(direction);
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
+
+        if (characterController.isGrounded)
+        {
+            verticalVelocity = 0; 
+        }
+        else
+        {
+            verticalVelocity += gravity * Time.deltaTime;
+        }
+
+        Vector3 move = direction * speed * Time.deltaTime;
+        move.y = verticalVelocity * Time.deltaTime; 
+        characterController.Move(move);
+
+        bool isMoving = direction.magnitude > 0.1f;
+        if (animator != null)
+        {
+            animator.SetBool("Walk", isMoving);
+            animator.SetBool("Idle", !isMoving);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            playerScript.TakeDamage();
+            Explode();
+
+        }
+
+        if (other.CompareTag("Projectile")) 
+        {
+            playerScript.AddPoints(10f);
+            Explode();
+        }
+    }
+
+    public void Explode()
+    {
+        if (explosionEffect != null)
+        {
+            Vector3 explosionPosition = transform.position + Vector3.up * explosionHeightOffset;
+            Instantiate(explosionEffect, explosionPosition, Quaternion.identity);
+        }
+        Destroy(gameObject);
+    }
+    public void OnDestroy()
+    {
+        waveManager.EnemyKilled();
+    }
+}
 ```
 
 - Jogador:
 ```csharp
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using TMPro;
 
+public class Player : MonoBehaviour
+{
+    public int lives = 3;
+    public float points = 0f;
+    public TMP_Text pointsText;
+    public TMP_Text livesText;
+    public GameObject gameOverScreen;
+    public GameObject pauseMenu;
+
+    public GameObject projectilePrefab;
+    public Transform shootPoint;
+    public float projectileSpeed = 20f;
+    public float fireRate = 0.5f;
+    private float lastShotTime;
+
+    private Animator animator;
+    public CharacterController controller;
+    public Transform playerObj;
+    public Transform cam;
+    public float moveSpeed = 5f;
+    public float gravity = -9.81f;
+    private Vector3 velocity;
+    private bool isGrounded;
+
+
+
+    private bool isPaused = false;
+
+    private void Start()
+    {
+        UpdateUI();
+        gameOverScreen.SetActive(false);
+        pauseMenu.SetActive(false);
+        animator = GetComponent<Animator>();
+
+    }
+
+    private void Update()
+    {
+        Pause();
+
+        if (Input.GetMouseButton(0) && Time.time >= lastShotTime + fireRate)
+        {
+            FireProjectile();
+            lastShotTime = Time.time;
+        }
+
+        isGrounded = controller.isGrounded;
+
+        if (isGrounded && velocity.y < 0)
+        {
+            velocity.y = -2f;
+        }
+
+        float horizontalInput = Input.GetAxisRaw("Horizontal");
+        float verticalInput = Input.GetAxisRaw("Vertical");
+
+        Vector3 forward = new Vector3(cam.forward.x, 0, cam.forward.z).normalized;
+        Vector3 right = new Vector3(cam.right.x, 0, cam.right.z).normalized;
+        Vector3 moveDir = (forward * verticalInput + right * horizontalInput).normalized;
+
+        controller.Move(moveDir * moveSpeed * Time.deltaTime);
+
+        velocity.y += gravity * Time.deltaTime;
+        controller.Move(velocity * Time.deltaTime);
+
+        bool isMoving = moveDir.magnitude > 0.1f;
+        if (animator != null)
+        {
+            animator.SetBool("Run", isMoving);
+            animator.SetBool("Idle", !isMoving);
+        }
+
+        LookAtMouse();
+    }
+
+    private void LookAtMouse()
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(ray, out RaycastHit hitInfo))
+        {
+            Vector3 targetPoint = hitInfo.point;
+            Vector3 lookDirection = targetPoint - playerObj.position;
+            lookDirection.y = 0;
+            playerObj.rotation = Quaternion.LookRotation(lookDirection);
+        }
+    }
+
+    void FireProjectile()
+    {
+        if (projectilePrefab == null || shootPoint == null) return;
+        GameObject projectile = Instantiate(projectilePrefab, shootPoint.position, shootPoint.rotation);
+        Rigidbody rb = projectile.GetComponent<Rigidbody>();
+        if (rb != null)
+        {
+            rb.velocity = shootPoint.forward * projectileSpeed;
+        }
+        Destroy(projectile, 5f);
+    }
+
+    private void Pause()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            isPaused = !isPaused;
+
+            if (isPaused)
+            {
+                Time.timeScale = 0f;
+                pauseMenu.SetActive(true);
+            }
+            else
+            {
+                Time.timeScale = 1f;
+                pauseMenu.SetActive(false);
+            }
+        }
+    }
+
+    public void TakeDamage()
+    {
+        lives--;
+
+        if (lives <= 0)
+        {
+            GameOver();
+        }
+        else
+        {
+            UpdateUI();
+        }
+    }
+
+    public void AddPoints(float amount)
+    {
+        points += amount;
+        UpdateUI();
+    }
+
+    private void UpdateUI()
+    {
+        pointsText.text = "Points: " + points.ToString();
+        livesText.text = "Lives: " + lives.ToString();
+    }
+
+    private void GameOver()
+    {
+        gameOverScreen.SetActive(true);
+    }
+}
 ```
 
 - Wave:
 ```csharp
+using System.Collections;
+using System.Collections.Generic;
+using TMPro;
+using UnityEngine;
 
+public class Wave : MonoBehaviour
+{
+    public GameObject enemyPrefab;
+    public Transform[] spawnPoints; 
+    public TMP_Text waveText; 
+    private int currentWave = 1; 
+    private int enemiesToSpawn = 2; 
+    private int enemiesAlive = 0;
+
+    private void Start()
+    {
+        UpdateWaveText(); 
+        StartCoroutine(SpawnWave()); 
+    }
+
+    private IEnumerator SpawnWave()
+    {
+        yield return new WaitForSeconds(2f);
+
+        for (int i = 0; i < enemiesToSpawn; i++)
+        {
+            Transform spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
+            Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);
+
+            enemiesAlive++; 
+            yield return new WaitForSeconds(0.5f);
+        }
+    }
+
+    public void EnemyKilled()
+    {
+        enemiesAlive--; 
+        if (enemiesAlive <= 0)
+        {
+            AdvanceWave();
+        }
+    }
+
+    private void AdvanceWave()
+    {
+        currentWave++; 
+        enemiesToSpawn += 3; 
+        UpdateWaveText();
+        StartCoroutine(SpawnWave()); 
+    }
+
+    private void UpdateWaveText()
+    {
+        waveText.text = "Wave: " + currentWave.ToString();
+    }
+}
 ```
 
 - UI:
 ```csharp
+using System.Collections;
+using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEditorInternal;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using UnityEngine.UIElements;
 
+public class UI : MonoBehaviour
+{
+    private bool VerEscolha;
+    private AudioSource AudioMenu;
+    public AudioSource AudioJogo;
+
+    private void Iniciar()
+    {
+        AudioMenu = GetComponent<AudioSource>();
+        SceneManager.LoadSceneAsync("Armazem");
+    }
+    private void Sair()
+    {
+        Application.Quit();
+    }
+    private void Reiniciar(){
+        SceneManager.LoadSceneAsync("Armazem");
+    }
+
+
+
+    void Update()
+
+    {
+        if (gameObject.tag == "Entrar")
+        {
+            Iniciar();
+        }
+
+        else if (gameObject.tag == "Sair")
+        {
+            Sair();
+        }
+        else if (gameObject.tag == "GameOver")
+        {
+            Reiniciar();
+        }
+    }
+}
 ```
 <br>
 
