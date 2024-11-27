@@ -107,19 +107,6 @@ _________________________________________________________________
 
 # Diagrama UML:
 
-- Jogador1:
-(Associação -----> UI. Jogador precisa apertar algo pra rodar o jogo).
-
-- Inimigo:
-(Associação Inimigo <-----> Jogador. Precisa do jogador pra existir).
-
-- Wave:
-Associação (Wave <-----> Inimigo. Inimigo precisa de uma Wave pra nascer e Wave precisa do Inimigo).
-
-- UI: 
-
-
-
 _________________________________________________________________
 
 # Referências:
