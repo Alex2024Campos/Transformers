@@ -4,7 +4,7 @@
 >- Escola: Etec Prof. Basilides de Godoy.
 >- Sobre: Repositório para a documentação do jogo Transformers, um trabalho proposto pelas professoras Aline Firmino Brito e Nivia Maria Domingues, da Etec Prof. Basilides de Godoy.
 >- Datas: Apresentar o jogo (terça-feira que vem, 26/11/2024).
->- Projeto (drive): 
+>- Projeto (drive): https://drive.google.com/drive/folders/1_ls9ojh6CY0qQvsZfG7ksWS_e6w3Heri?usp=sharing
 
 >[!Important]
  > ` - Equipe:`
