@@ -20,6 +20,10 @@
 > [!NOTE]
 >- `Gameplay`:
 
+
+https://github.com/user-attachments/assets/ae072a84-024d-403f-9326-24b056dadf9a
+
+
 _________________________________________________________________
 
 # História do Jogo:
