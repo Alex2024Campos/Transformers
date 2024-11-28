@@ -55,7 +55,7 @@ _________________________________________________________________
 # Codificação do Jogo:
  Abaixo teremos os códigos do nosso projeto e uma explicação mais detalhada das principais linhas de códigos deles.
 
-- Inimigo:
+- Enemy:
 ```csharp
 using System.Collections;
 using System.Collections.Generic;
@@ -146,7 +146,7 @@ public class Enemy : MonoBehaviour
 }
 ```
 
-- Jogador:
+- Player:
 ```csharp
 using System.Collections;
 using System.Collections.Generic;
@@ -304,7 +304,7 @@ public class Player : MonoBehaviour
     }
 }
 ```
-
+- Projectile
 ```csharp
 using System.Collections;
 using System.Collections.Generic;
@@ -388,57 +388,7 @@ public class Wave : MonoBehaviour
 }
 ```
 
-- UI:
-```csharp
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEditorInternal;
-using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
-using UnityEngine.UIElements;
-
-public class UI : MonoBehaviour
-{
-    private bool VerEscolha;
-    private AudioSource AudioMenu;
-    public AudioSource AudioJogo;
-
-    private void Iniciar()
-    {
-        AudioMenu = GetComponent<AudioSource>();
-        SceneManager.LoadSceneAsync("Armazem");
-    }
-    private void Sair()
-    {
-        Application.Quit();
-    }
-    private void Reiniciar(){
-        SceneManager.LoadSceneAsync("Armazem");
-    }
-
-
-
-    void Update()
-
-    {
-        if (gameObject.tag == "Entrar")
-        {
-            Iniciar();
-        }
-
-        else if (gameObject.tag == "Sair")
-        {
-            Sair();
-        }
-        else if (gameObject.tag == "GameOver")
-        {
-            Reiniciar();
-        }
-    }
-}
-```
+- Button
 ```Csharp
 using System.Collections;
 using System.Collections.Generic;
