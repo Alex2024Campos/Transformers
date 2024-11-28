@@ -305,6 +305,29 @@ public class Player : MonoBehaviour
 }
 ```
 
+```csharp
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Projectile : MonoBehaviour
+{
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Enemy"))
+        {
+
+            Enemy enemyScript = other.GetComponent<Enemy>();
+            if (enemyScript != null)
+            {
+                enemyScript.Explode();
+            }
+            Destroy(gameObject);
+        }
+    }
+}
+```
+
 - Wave:
 ```csharp
 using System.Collections;
@@ -416,6 +439,31 @@ public class UI : MonoBehaviour
     }
 }
 ```
+```Csharp
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class Buttons : MonoBehaviour
+{
+    public void StartGame()
+    {
+        SceneManager.LoadScene("Armazem");
+    }
+
+    public void QuitGame()
+    {
+        Debug.Log("Saindo do Jogo...");
+        Application.Quit();
+    }
+    public void Menu()
+    {
+        SceneManager.LoadScene("Menu_Inicial");
+    }
+}
+```
+
 <br>
 
 # UI do Jogo:
@@ -435,6 +483,7 @@ public class UI : MonoBehaviour
 - Materials de exemplo:
  Vale ressaltar que os hexadecimais de cada um dos materials são de exemplo e aproximados, pois não foi-se utilizado de um material próprio com uma cor específica no RGB para podemos retirar essa informação e colocar aqui.
 
+# Objetos/Cenário
 | Textura | Imagem | Hexadecimal |
 | --- | --- | --- |
 | Piso | ![image](https://github.com/user-attachments/assets/36cd2cf1-04d5-499f-b256-b538b3e10a46)| 000000 |
@@ -443,8 +492,22 @@ public class UI : MonoBehaviour
 | Rua Pavimentada |![image](https://github.com/user-attachments/assets/d4186f99-a146-49f8-b70e-24d5325538e3)| N/A|
 | Tanque de Óleo |![image](https://github.com/user-attachments/assets/9175fda8-0ae8-459f-a2a9-ef4beb5502c4)| N/A|
 | Ônibus | ![image](https://github.com/user-attachments/assets/bedee9b4-fa93-4fec-9efb-aa0554b06f44)| N/A|
+| Lixeira | ![image](https://github.com/user-attachments/assets/7e05a41e-de8e-4948-9964-953ec388dbd3)| N/A |
+| Lixeira2 | ![image](https://github.com/user-attachments/assets/2384084b-d5f7-49f7-a19f-e49d66098a27)| N/A |
+| Hangar1 | ![image](https://github.com/user-attachments/assets/b318f6df-8cf3-4280-a72d-130b4d129af5)| N/A| 
+| Hangar2 | ![image](https://github.com/user-attachments/assets/4661477d-ad41-4feb-8061-b973658fd981)| N/A |
+| Caminhão | ![image](https://github.com/user-attachments/assets/fe4c047c-fd7d-4337-b292-5eebe7089d93)| N/A |
+
+
+# Personagens
+| Textura | Imagem | Hexadecimal |
+| --- | --- | --- |
 | Bumbleebe1 | ![image](https://github.com/user-attachments/assets/179cd790-02c5-4827-aa7a-b3964f78cad9)| FFFD00 |
 | Inimigo1 |  ![image](https://github.com/user-attachments/assets/20979302-5573-428b-8ffd-3805a9a2ab7e)  ![image](https://github.com/user-attachments/assets/cd32eb2b-46ec-4502-bf62-e0bf9cf5133a)| 5A5A5A |
+
+# Menu
+| Textura | Imagem | Hexadecimal |
+| --- | --- | --- |
 | Menu_Inicial | ![image](https://github.com/user-attachments/assets/ff84eed9-bca4-49c1-9386-ca5840443d65)| N/A |
 | Menu_GameOver | ![image](https://github.com/user-attachments/assets/439f1145-9765-4702-9bbb-64204148cafa)| N/A |
 | Menu_Pausa | ![image](https://github.com/user-attachments/assets/95560d2f-24c2-4b18-847e-a53436f3ba41)| N/A|
