@@ -439,11 +439,18 @@ public class UI : MonoBehaviour
 | --- | --- | --- |
 | Piso | ![image](https://github.com/user-attachments/assets/36cd2cf1-04d5-499f-b256-b538b3e10a46)| 000000 |
 | Muro | ![image](https://github.com/user-attachments/assets/115e2b22-88a5-4480-989f-83d79701bc28)| 868080 |
+| Armazém |![image](https://github.com/user-attachments/assets/99cf47d6-08a9-48fb-aef6-425be88d79e1)| N/A|
+| Rua Pavimentada |![image](https://github.com/user-attachments/assets/d4186f99-a146-49f8-b70e-24d5325538e3)| N/A|
+| Tanque de Óleo |![image](https://github.com/user-attachments/assets/9175fda8-0ae8-459f-a2a9-ef4beb5502c4)| N/A|
+| Ônibus | ![image](https://github.com/user-attachments/assets/bedee9b4-fa93-4fec-9efb-aa0554b06f44)| N/A|
 | Bumbleebe1 | ![image](https://github.com/user-attachments/assets/179cd790-02c5-4827-aa7a-b3964f78cad9)| FFFD00 |
 | Inimigo1 |  ![image](https://github.com/user-attachments/assets/20979302-5573-428b-8ffd-3805a9a2ab7e)  ![image](https://github.com/user-attachments/assets/cd32eb2b-46ec-4502-bf62-e0bf9cf5133a)| 5A5A5A |
 | Menu_Inicial | ![image](https://github.com/user-attachments/assets/ff84eed9-bca4-49c1-9386-ca5840443d65)| N/A |
 | Menu_GameOver | ![image](https://github.com/user-attachments/assets/439f1145-9765-4702-9bbb-64204148cafa)| N/A |
 | Menu_Pausa | ![image](https://github.com/user-attachments/assets/95560d2f-24c2-4b18-847e-a53436f3ba41)| N/A|
+
+
+
 <br>
 _________________________________________________________________
 
