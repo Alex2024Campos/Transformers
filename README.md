@@ -19,7 +19,7 @@
 
 > [!NOTE]
 >- `Gameplay`:
-(Video)
+
 _________________________________________________________________
 
 # História do Jogo:
@@ -512,13 +512,12 @@ public class Buttons : MonoBehaviour
 | Menu_GameOver | ![image](https://github.com/user-attachments/assets/439f1145-9765-4702-9bbb-64204148cafa)| N/A |
 | Menu_Pausa | ![image](https://github.com/user-attachments/assets/95560d2f-24c2-4b18-847e-a53436f3ba41)| N/A|
 
-
-
 <br>
 _________________________________________________________________
 
 # Diagrama UML:
-![Diagrama_UML_Transformers (1)](https://github.com/user-attachments/assets/7359214e-dfe6-4eb3-961c-ed433a527bbe)
+
+![Diagrama_UML_Transformers](https://github.com/user-attachments/assets/fe815743-3303-41fa-81fe-8e11d25fab43)
 
 _________________________________________________________________
 
