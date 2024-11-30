@@ -516,15 +516,13 @@ public class Buttons : MonoBehaviour
 | Menu_Inicial | ![image](https://github.com/user-attachments/assets/ff84eed9-bca4-49c1-9386-ca5840443d65)| 
 | Menu_GameOver | ![image](https://github.com/user-attachments/assets/439f1145-9765-4702-9bbb-64204148cafa)| 
 | Menu_Pausa | ![image](https://github.com/user-attachments/assets/95560d2f-24c2-4b18-847e-a53436f3ba41)| 
-
 <br>
-_________________________________________________________________
+
 
 # Arte Conceitual:
 
 ![image](https://github.com/user-attachments/assets/22be097d-81d7-42be-9e25-96e0783101c9)
-
-<br>
+_________________________________________________________________
 
 # Diagrama UML:
 
@@ -557,6 +555,7 @@ _________________________________________________________________
 
 # Referências:
 
+https://sketchfab.com/3d-models/robot-2020-c0dadae4d1884bf48615f1ee301fe7e6
 https://sketchfab.com/3d-models/transformers-2007-movie-bumblebee-1977-54454cddc885490f91c557851ec3f1db
 https://assetstore.unity.com/packages/3d/environments/industrial/rpg-fps-game-assets-for-pc-mobile-industrial-set-v3-0-101429
 https://assetstore.unity.com/packages/3d/environments/industrial/rpg-fps-game-assets-for-pc-mobile-industrial-set-v2-0-86679
