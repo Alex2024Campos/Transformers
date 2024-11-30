@@ -15,7 +15,7 @@
  > `- Alterações do Jogo:`
  >- `Acrescento de um projétil.`
  >- `Exclusão dos estilos de luta e variação do inimigo (mudar vida, etc).`
->- `Mudança nos principais personagens.`
+>- `Mudança nos personagens principais.`
 
 > [!NOTE]
 >- `Gameplay`:
