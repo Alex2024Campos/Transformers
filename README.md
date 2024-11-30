@@ -1,5 +1,5 @@
 >[!Important]
- > ` - Projeto:`
+ > ` - Transformers (2007) | Transformers, The Fight:`
 >- Turma: 2°Mtec Desenvolvimento de Jogos Digitais.
 >- Escola: Etec Prof. Basilides de Godoy.
 >- Sobre: Repositório para a documentação do jogo Transformers, um trabalho proposto pelas professoras Aline Firmino Brito e Nivia Maria Domingues, da Etec Prof. Basilides de Godoy.
@@ -7,7 +7,7 @@
 >- Projeto (drive): https://drive.google.com/drive/folders/1_ls9ojh6CY0qQvsZfG7ksWS_e6w3Heri?usp=sharing
 
 >[!Important]
- > ` - Equipe:`
+ > ` - Dupla:`
 >- Alex Campos de Oliveira
 >- Felipe Mussato Rodrigues
 
@@ -25,17 +25,56 @@ https://github.com/user-attachments/assets/ae072a84-024d-403f-9326-24b056dadf9a
 
 
 _________________________________________________________________
+# Descrições:
 
-# História do Jogo:
-Sam e Mikaela, fugindo de um Decepticon, fogem de forma desesperada até um depósito de carros abandonado. Então, o Autobot, antes transformado em carro e que estava a ajudar os dois a fugir do inimigo, freia bruscamente e se transforma em robô, pronto para defender os humanos. O confronto é intenso, com o Autobot trocando golpes poderosos com o Decepticon e seus "minions" (inimigos menores, os quais estão auxiliando o inimigo da cena a lutar contra nosso jogador) em meio as pilhas de carros sucateados.
+## Descrição da Obra:
+- Transformers (2007) explora a relação entre humanos e tecnologia, mostrando o impacto desse encontro em uma batalha épica pelo destino da Terra. No centro da história está o AllSpark, uma fonte de energia capaz de criar e destruir, refletindo o potencial criador e destruidor da própria tecnologia. Os Autobots e Decepticons, liderados por Optimus Prime e Megatron, representam o clássico embate entre o bem e o mal, onde os primeiros buscam proteger, e os segundos dominar; e os mesmos buscam o AllSpark com objetivos diferentes, logo o enredo da história é desenvolvido de acordo com essa trama.
+ A jornada de Sam Witwicky, um jovem comum que se vê no centro desse conflito ao lado de Bumblebee, simboliza a descoberta de responsabilidade e amadurecimento em meio ao caos. Mais que um espetáculo visual, a obra traz uma visão humanizada das máquinas e questiona como tecnologia e humanidade podem coexistir, sugerindo que, mesmo em seres de metal, há valores e lealdades. O filme une o espetacular e o banal ao mostrar que o herói pode vir de qualquer lugar, até mesmo de um adolescente desajeitado.       
+ Embora robôs, os Autobots têm personalidades, valores e emoções, especialmente Bumblebee, que cria um vínculo de amizade com Sam. Isso sugere que, apesar de sua origem alienígena e mecânica, a essência dos Autobots é profundamente semelhante à humana; em contraste com os Decepticons, que representam o lado mais sombrio e destrutivo da tecnologia. O filme também reavivou a franquia Transformers e deixou um marco na cultura popular.
 <br>
 
+##  Descrição da Cena:
+- Na cena, Sam e Mikaela acompanhado o Bumblebee vão desesperadamente até um depósito de carros abandonado, fugindo de Barricade, um Decepticon. Bumblebee para bruscamente e se transforma de Camaro em robô, pronto para defender os humanos. O confronto é intenso, com Bumblebee e Barricade trocando golpes poderosos entre pilhas de carros sucateados. Durante a batalha, Barricade lança um pequeno robô( chamado Mini-Cons), rápido e ágil, que avança em direção a Sam e Mikaela. Bumblebee luta para proteger os dois, enfrentando o Barricade, enquanto o pequeno robô tenta capturar o Sam. A cena atinge seu clímax quando Bumblebee derrota Barricade, e Mikaela e Sam conseguem eliminar o pequeno robô.
+<br>
+
+## Teoria das Cores (Obra):
+- A teoria das cores na obra é aplicada de forma cuidadosa para transmitir características e sentimentos dos personagens e ambientações. Cada cor reforça traços de personalidade, criando uma identificação emocional e visual clara para cada personagem e cenário. Os Autobots são caracterizados por cores vibrantes e mais saturadas; Bumblebee em amarelo brilhante, Optimus Prime em azul e vermelho intensos. Essas cores representam heroísmo, vitalidade e calor, associando os Autobots a qualidades positivas e acessíveis. Em contraste, os Decepticons.
+ Decepticons: Os Decepticons têm tons de cinza e prata metálico, criando um visual frio e ameaçador. A ausência de cores vivas nos Decepticons reforça sua impessoalidade e crueldade, simbolizando a falta de compaixão e a ambição destrutiva. Esses tons neutros e frios contrastam com as cores vibrantes dos Autobots, marcando-os como uma presença hostil e perigosa.
+ Cenários: Muitos dos cenários são urbanos e cinzentos, com tons industriais que reforçam o clima de ameaça e tensão no filme. O cinza predominante no ambiente reflete um mundo comum e neutro, que ganha vida e caos com a chegada das máquinas coloridas e metálicas.
+<br>
+
+## Teoria das Cores (Cena):
+- No ambiente sombrio e desbotado do depósito, o amarelo vibrante de nosso protagonista se destaca e serve como forma de enfatizar sua presença protetora e heroica. O contraste do ambiente com a cor do personagem reforça o seu papel como defensor, trazendo o seu elemento de segurança e confiança visual. Para se contrastar com Bumblebee, teremos o principal inimigo, lacaios Decepticons enviados por Barricade para capturar Sam e que contarão com tons escuros, metálico e ferrugem, passando uma sensação de ameaça constante. As cores frias fazem dele uma figura intimidante e perigosa, especialmente quando combinado com o ambiente sombrio do depósito, destacando seu papel como inimigo e ameaça. Por fim, o cenário é dominado por cores desgastadas e metálicas, com tons de cinza, marrom e ferrugem, criando uma sensação de abandono e isolamento e tornando o confronto entre Bumblebee e os lacaios de Barricade ainda mais intenso.
+<br>
+
+## Análise dos Protagonistas:
+- Sam Witwickyt:
+ Sam é um jovem que tem uma paixão por Mikaela e, ao menos no começo do filme, quer muito um carro para tentar atrair alguém com isso. No decorrer da trama, ele acaba se aproximando de quem gostava e criando uma relação próxima com Bumblebee, o qual foi seu primeiro carro e que o defendeu em diversas ocasiões. Sam continha um óculos de seu avô que serviria como um tipo de mapa até o cubo, um objeto almejado por Megatron. Enfim, ele começa a trama sendo um jovem meio esquisito, covarde e também introvertido, mas com o decorrer dela ele começa a se tornar alguém mais confiante e até mesmo acaba ficando com Mikaela.
+
+- Mikaela:
+ Mikaela, como Sam, é uma jovem que acaba conhecendo o protagonista do filme no começo dele ao precisar de uma carona para voltar para casa, voltando a aparecer mais pra frente do filme somente (na cena em que Sam está fugindo de Bumblebee, pois não o conhecia naquele momento). Ela acaba por se aproximar mais do herói do filme quando os dois estão sendo perseguidos por um Decepticon, mas sendo salvos por Bumblebee, e curiosa com tudo aquilo ela acaba unindo forças com os dois. Ela é uma ex-criminosa e sabe bastante de carros devido ao seu pai que ensinou tudo que sabia a ela e a levou em alguns "serviços" (roubar carros), dai o histórico criminal dela, mas o mesmo acaba sendo "apagado" após ela ajudar o governo a lutar contra os Decepticons.
+
+- Meg: 
+ É uma das pessoas jovens que acaba aderindo ao serviço de defesa americano e que foi de grande ajuda ao descobrir sobre o que teria atacado a base do Qatar (no caso, os soldados de Megatron). Meg também foi presa após levar alguns dados confidenciais a um colega dela na tentativa de descobrir o que é que fosse aquela frequência. No fim, ela acaba sendo chamada para ajudar na luta contra os Decepticons. 
+ 
+- Bumblebee:
+ O carro de Sam, Bumblebee acaba sendo importantíssimo na luta contra Megatron e na missão de esconder ou destruir o cubo de Optimus Prime, até mesmo salvando Sam em diversas situações. Inicialmente, ele se mantém camuflado como um carro até que Sam e Mikaela acabem descobrindo ele e depois o que seria ele. Ele é um dos membros do grupo de Optimus Prime e é quem protege o cubo até ele ser dado para o protagonista. 
+
+- Sargento Lennox:
+ O Sargento Lennox é um dos militares sobreviventes do ataque a base do Qatar e também um dos personagens que estiveram na luta contra Megatron e seu grupo, tendo ajudado ao conseguir alguns dados (imagem e um dos que sobreviveram à luta contra o Decepticon) sobre os "aliens" que estavam invadindo a Terra. Além disso, ele ajuda Sam a conseguir libertar o Bumblebee ao ser capturado pelo governo para ser pesquisado e serem feitos testes nele.
+<br>
+
+## História do Jogo:
+- Sam e Mikaela, fugindo de um Decepticon, fogem de forma desesperada até um depósito de carros abandonado. Então, o Autobot, antes transformado em carro e que estava a ajudar os dois a fugir do inimigo, freia bruscamente e se transforma em robô, pronto para defender os humanos. O confronto é intenso, com o Autobot trocando golpes poderosos com o Decepticon e seus "minions" (inimigos menores, os quais estão auxiliando o inimigo da cena a lutar contra nosso jogador) em meio as pilhas de carros sucateados.
+_________________________________________________________________
+
 # Mecânica do Jogo:
-O jogo contará com algumas mecânicas, sendo elas: pontuação, hordas de inimigos e variação dentre os tipos de inimigos. Especificando melhor cada:
+- O jogo contará com algumas mecânicas, sendo elas: pontuação, hordas de inimigos e variação dentre os tipos de inimigos. Especificando melhor cada:
  - Pontuação: Cada inimigo destruído pelo nosso jogador, nesse caso o Autobot, gerará pontos para o mesmo. O objetivo do jogador é se manter vivo enquanto tenta atingir o máximo de pontuação possível.
    
  - Hordas de inimigos: Um sistema de "wave", o qual ditará a quantidade de inimigos que serão gerados durante a cena com base no valor atual da horda, o qual se altera com base na destruição de todos os inimigos na cena. Ou seja, sempre que você eliminar uma horda de inimigos inteira, a wave terá o acrescento de +1, multiplicando a quantidade de inimigos presentes no mapa.
 <br>
+
 
 # Classes do Jogo:
 As classes do jogo são: "Jogador", "Inimigo", "Wave" e "Menu". Abaixo estará melhor detalhadas essas classes:
@@ -441,18 +480,14 @@ public class Buttons : MonoBehaviour
  O menu de pausa terá a única função de permitir que o nosso player consiga pausar o jogo quando quiser ou precisar. É um Canvas que é chamado quando a tecla "Esc" é clicada e que desaparece quando "Tab" é pressionado. O código está presente no script do jogador. Contém um material, o qual foi inserida uma imagem que havia sido feita no Canvas, a sua imagem estará abaixo:
 
 - Menu gameover
- Como é de se imaginar, perder o nosso jogo, ou seja, chegar ao valor 0 de vidas, fará a ação de puxar o menu de gameover e permitirá o jogador decidir se vai reiniciar o jogo ou voltar ao menu inicial. Ocódigo está presente no script do jogador. 
+ Como é de se imaginar, perder o nosso jogo, ou seja, chegar ao valor 0 de vidas, fará a ação de puxar o menu de gameover e permitirá o jogador decidir se vai reiniciar o jogo ou voltar ao menu inicial. Ocódigo está presente no script do jogador.
 <br>
-
-# Paleta de Cor do Jogo:
-- No ambiente sombrio e desbotado do depósito, o amarelo vibrante de nosso protagonista se destaca e serve como forma de enfatizar sua presença protetora e heroica. O contraste do ambiente com a cor do personagem reforça o seu papel como defensor, trazendo o seu elemento de segurança e confiança visual. Para se contrastar com Bumblebee, teremos o principal inimigo, lacaios Decepticons enviados por Barricade para capturar Sam e que contarão com tons escuros, metálico e ferrugem, passando uma sensação de ameaça constante. As cores frias fazem dele uma figura intimidante e perigosa, especialmente quando combinado com o ambiente sombrio do depósito, destacando seu papel como inimigo e ameaça. Por fim, o cenário é dominado por cores desgastadas e metálicas, com tons de cinza, marrom e ferrugem, criando uma sensação de abandono e isolamento e tornando o confronto entre Bumblebee e os lacaios de Barricade ainda mais intenso.
 
 # Materials:
  As texturas citadas na tabela abaixo foram usadas para a composição de nossa cena, a qual é um armazém abandonado e situado por mais alguns edifícios que fazem parte do conjunto completo da região aonde a batalha ocorreria. Pegamos então, modelos de edifícios pre-modelados para "encher" (não deixar só uma cena com um piso e alguns muros) e transmitir uma sensação de um lugar mais "vivo" e com algum sentido, mesmo que não mais (por ser um armazém abandonado), para o universo em que o jogo se baseia. Para obstruir a passagem do jogador para fora do mapa, utilizamos de alguns modelos de veículos e muros, os quais estão desgastados/enferrujados pelo longo período sem utilidade ou uso, sendo os veículos sendo colocados estrategicamente nas entradas do armazém (o qual é cercado por alguns muros e tem uma rua passando em seu interior ) e mais um, nesse caso um caminhão, colocado dentro do armazém de lado e abandonado ao lado de algumas caçambas. No geral, nosso cenário utiliza-se de modelos pegos da AssetStore que transmitem ou apresentem uma sensação de "velho", "antigo" e "abandonado", o qual é o lugar para onde Sam e Mikaela fogem junto de Bumblebee.
  Agora, os personagens: como dito anteriormente na teoria das cores de nosso protagonista, Bumblebee, seu amarelo forte e imponente serve como uma forma do jogador distingui-lo do cenário e transmitir uma ideia de segurança e confiança visual. O nosso inimigo, composto predominantemente por cores mais frias e com uma textura de ferrugem, adjunto de uma luz vermelha em cima de sua cabeça, ressalta seu papel como adversário de Bumblebee e chama a atenção de nosso jogador.
   E sobre nossas texturas para os menus do jogo, elas foram feitas no Canvas e seus elementos são posicionados de forma estratégica para atrair a atenção do nosso jogador. Abaixo teremos uma tabela com cada material:
  
-
 # Objetos/Cenário
 | Textura | Imagem | 
 | --- | --- | 
@@ -485,12 +520,42 @@ public class Buttons : MonoBehaviour
 <br>
 _________________________________________________________________
 
+# Arte Conceitual:
+
+![image](https://github.com/user-attachments/assets/22be097d-81d7-42be-9e25-96e0783101c9)
+
+<br>
+
 # Diagrama UML:
+
+## Original:
+
+![Diagrama_UML_Transformers (4)](https://github.com/user-attachments/assets/14130709-ce3c-41f1-b172-3b6ec15f995e)
+
+## Corrigido:
 
 ![Diagrama_UML_Transformers (3)](https://github.com/user-attachments/assets/4588b50b-2aea-4ae3-b009-79774e2e8add)
 
 <br>
+
+_________________________________________________________________
+
+# Descrição do Desenvolvimento do Projeto:
+- Sobre o que foi feito em nosso projeto: de principal e mais importante, o sistema de waves e os projéteis. As waves foram feitas utilizando-se da Coroutine e de um looping para a instanciação de GameObjects (os inimigos) de forma períodica, ou seja, com um pequeno "timer" de wave para wave. Os inimigos são instanciados de um Prefab existente e escondido no mapa, o qual determina algumas características iniciais como: GameObjects no jogo que serão utilizados de base para o código, dentre outros mais simples como predefinir um valor para uma variável pela aba de propriedades ao lado. Os modelos e os efeitos dos projéteis foram pegos da internet, adjunto de códigos já pre-feitos no próprio Asset para o funcionamento de determinadas funções do objeto. Além do modelo de projétil, pegamos também alguns outros modelos para a composição do cenário: Assets de edifícios abandonados ou velhos, alguns veículos, etc, os quais foram utilizados para montar a cena por ambos da dupla. Pegamos também algumas animações da Mixamo e adicionamos aos objetos 3D já feitos do site "NOME DO SITE", sendo necessário criar um esqueleto para esses modelos pois não haviam, ao menos para o unity.
+  Após a principal parte do projeto ser feita, ou seja, cada um dos scripts e grande parte do mapa, foi-se direcionado o foco do projeto ao Readme de nosso GitHub e a correção de erros no jogo, organização dos arquivos, erros de nomeação e a produção do diagrama UML corrigido. Em resumo, focamos inicialmente nos códigos, utilizando-se de um mapa vazio para os testes enquanto criávamos o que seria utilizado na jogatina e após finalizado, inserirmos os modelos e os organizamos, depois só sendo necessário corrigir alguns erros básicos de movimentação, determinação de GameObjects (inserir pela tela de propriedades qual GameObject tal classe deveria puxar para o seu código) e de escrita. 
+<br>
+
+_________________________________________________________________
+
+# Descrição da Organização e Execução das Tarefas:
+Alex:
+Felipe: 
+
+<br>
+
 _________________________________________________________________
 
 # Referências:
+
+<br>
  
