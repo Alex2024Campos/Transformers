@@ -534,21 +534,21 @@ _________________________________________________________________
 
 ## Corrigido:
 
-![Diagrama_UML_Transformers (3)](https://github.com/user-attachments/assets/4588b50b-2aea-4ae3-b009-79774e2e8add)
+![Diagrama_UML_Transformers (5)](https://github.com/user-attachments/assets/495eb2ae-39aa-45da-b659-7a35211882e8)
 
 <br>
 
 _________________________________________________________________
 
 # Descrição do Desenvolvimento do Projeto:
-- Sobre o que foi feito em nosso projeto: de principal e mais importante, o sistema de waves e os projéteis. As waves foram feitas utilizando-se da Coroutine e de um looping para a instanciação de GameObjects (os inimigos) de forma períodica, ou seja, com um pequeno "timer" de wave para wave. Os inimigos são instanciados de um Prefab existente e escondido no mapa, o qual determina algumas características iniciais como: GameObjects no jogo que serão utilizados de base para o código, dentre outros mais simples como predefinir um valor para uma variável pela aba de propriedades ao lado. Os modelos e os efeitos dos projéteis foram pegos da internet, adjunto de códigos já pre-feitos no próprio Asset para o funcionamento de determinadas funções do objeto. Além do modelo de projétil, pegamos também alguns outros modelos para a composição do cenário: Assets de edifícios abandonados ou velhos, alguns veículos, etc, os quais foram utilizados para montar a cena por ambos da dupla. Pegamos também algumas animações da Mixamo e adicionamos aos objetos 3D já feitos do site "NOME DO SITE", sendo necessário criar um esqueleto para esses modelos pois não haviam, ao menos para o unity.
+- Sobre o que foi feito em nosso projeto: de principal e mais importante, o sistema de waves e os projéteis. As waves foram feitas utilizando-se da Coroutine e de um looping para a instanciação de GameObjects (os inimigos) de forma períodica, ou seja, com um pequeno "timer" de wave para wave. Os inimigos são instanciados de um Prefab existente e escondido no mapa, o qual determina algumas características iniciais como: GameObjects no jogo que serão utilizados de base para o código, dentre outros mais simples como predefinir um valor para uma variável pela aba de propriedades ao lado. Os modelos, os efeitos e o projétil em si foi pego da AssetStore, adjunto dos efeitos de explosão. Além do modelo de projétil, pegamos também alguns outros modelos para a composição do cenário: Assets de edifícios abandonados ou velhos, alguns veículos, etc, os quais foram utilizados para montar a cena por ambos da dupla. Pegamos também algumas animações da Mixamo e adicionamos aos objetos 3D já feitos do site "NOME DO SITE", sendo necessário criar um esqueleto para esses modelos pois não haviam, ao menos para o unity.
   Após a principal parte do projeto ser feita, ou seja, cada um dos scripts e grande parte do mapa, foi-se direcionado o foco do projeto ao Readme de nosso GitHub e a correção de erros no jogo, organização dos arquivos, erros de nomeação e a produção do diagrama UML corrigido. Em resumo, focamos inicialmente nos códigos, utilizando-se de um mapa vazio para os testes enquanto criávamos o que seria utilizado na jogatina e após finalizado, inserirmos os modelos e os organizamos, depois só sendo necessário corrigir alguns erros básicos de movimentação, determinação de GameObjects (inserir pela tela de propriedades qual GameObject tal classe deveria puxar para o seu código) e de escrita. 
 <br>
 
 _________________________________________________________________
 
 # Descrição da Organização e Execução das Tarefas:
-Alex:
+Alex: Para mim, ambos da dupla trabalharam bem e participaram em todo o projeto ao todo, seja fazendo parte de toda a produção ou auxiliando na correção de problemas. A principal parte que fiz foi a visual (mapa), a codificação da Wave e do Inimigo (que depois viria a ser modificada pelo Felipe para funcionar com os projéteis), a parte da interface do jogo e a documentação de nosso projeto, além de procurar tentar ajudar e procurar ajuda quando precisava. No geral, o projeto foi bem desenvolvido e separado, buscando dividir as tarefas de forma que coincidissem com os pontos fortes de cada um, e claro, com cada um não se limitando somente na parte que mais tivesse facilidade, mas também auxiliando o outro quando houvesse necessidade.
 Felipe: 
 
 <br>
@@ -557,5 +557,18 @@ _________________________________________________________________
 
 # Referências:
 
+https://sketchfab.com/3d-models/transformers-2007-movie-bumblebee-1977-54454cddc885490f91c557851ec3f1db
+https://assetstore.unity.com/packages/3d/environments/industrial/rpg-fps-game-assets-for-pc-mobile-industrial-set-v3-0-101429
+https://assetstore.unity.com/packages/3d/environments/industrial/rpg-fps-game-assets-for-pc-mobile-industrial-set-v2-0-86679
+https://assetstore.unity.com/packages/2d/textures-materials/sky/allsky-free-10-sky-skybox-set-146014
+https://assetstore.unity.com/packages/vfx/particles/fire-explosions/hq-explosions-pack-free-263326
+https://assetstore.unity.com/packages/3d/vehicles/land/school-bus-hq-70485
+https://assetstore.unity.com/packages/vfx/particles/fire-explosions/fire-spell-effects-36825
+https://assetstore.unity.com/packages/3d/environments/fantasy/fantasy-forest-environment-free-demo-35361
+https://assetstore.unity.com/packages/3d/vehicles/land/low-poly-cars-101798
+https://assetstore.unity.com/publishers/12124
+https://assetstore.unity.com/publishers/3830
+https://assetstore.unity.com/publishers/12124
+https://assetstore.unity.com/publishers/6452
 <br>
  
