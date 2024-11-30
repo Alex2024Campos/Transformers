@@ -68,23 +68,23 @@ using UnityEngine.SceneManagement;
 
 public class Enemy : MonoBehaviour
 {
-    Animator animator;
-    private float speed = 5f;
-    private CharacterController characterController;
-    public GameObject player;
-    public GameObject explosionEffect; 
-    public float explosionHeightOffset = 1f; 
-    private float gravity = -9.8f;
-    private float verticalVelocity;
-    public Wave waveManager;
-    public Player playerScript;
+    Animator animator; // Animator do inimigo
+    private float speed = 5f; // Variável para a velocidade do inimigo
+    private CharacterController characterController; / CharacterController do inimigo
+    public GameObject player; // Puxa o objeto "Jogador"
+    public GameObject explosionEffect; // Puxa o efeito de explosão
+    public float explosionHeightOffset = 1f; //  
+    private float gravity = -9.8f; // Variável para a gravidade do inimigo (usado para faze-lo ficar no chão)
+    private float verticalVelocity; // Variável usada para caso o inimigo esteja no ar, ele caia e fique no chão
+    public Wave waveManager; // Variável que puxa os elementos públicos da Wave
+    public Player playerScript; // Variável que puxa os elementos públicos do Jogador
 
     [System.Obsolete]
     void Start()
     {
-        animator = GetComponent<Animator>();
-        characterController = GetComponent<CharacterController>();
-        playerScript = FindObjectOfType<Player>();
+        animator = GetComponent<Animator>(); //Pega o animator do inimigo
+        characterController = GetComponent<CharacterController>(); // Pega o controller do inimigo
+        playerScript = FindObjectOfType<Player>(); //Atribue o player à variável playerScript
 
     }
 
@@ -92,26 +92,26 @@ public class Enemy : MonoBehaviour
     {
        
 
-        Vector3 direction = (player.transform.position - transform.position).normalized;
+        Vector3 direction = (player.transform.position - transform.position).normalized; // Determina a direção do inimigo com base na posição do jogador
 
-        Quaternion lookRotation = Quaternion.LookRotation(direction);
-        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
+        Quaternion lookRotation = Quaternion.LookRotation(direction); // Direciona o rotacionamento do inimigo
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f); // Aplica a rotação ao inimigo
 
-        if (characterController.isGrounded)
+        if (characterController.isGrounded) // Verifica se o inimigo está no chão, se estiver ele deixa a velocidade de queda em zero, senão, utiliza do Gravity e Time.deltaTime para determinar a velocidade vertical dele e assim deixa-lo no chão
         {
-            verticalVelocity = 0; 
+            verticalVelocity = 0;
         }
         else
         {
-            verticalVelocity += gravity * Time.deltaTime;
+            verticalVelocity += gravity * Time.deltaTime; 
         }
 
         Vector3 move = direction * speed * Time.deltaTime;
         move.y = verticalVelocity * Time.deltaTime; 
         characterController.Move(move);
 
-        bool isMoving = direction.magnitude > 0.1f;
-        if (animator != null)
+        bool isMoving = direction.magnitude > 0.1f; // Ditará se o jogador estará se movendo para atribuir a animação "Walk", caso seja null, a animação será "Idle"
+        if (animator != null) // Se existir um animator (ou seja, não for nulo), irá atribuir as animações abaixo ("Walk"[isMoving] , "Idle [!isMoving]")
         {
             animator.SetBool("Walk", isMoving);
             animator.SetBool("Idle", !isMoving);
@@ -120,30 +120,31 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player")) // Verifica se o objeto em que o inimigo está colidindo é igual à "Player" e caso seja, puxa o método "Explode()" do próprio inimigo e um do player, o "TakeDamage()" que causará dano ao jogador
         {
             playerScript.TakeDamage();
             Explode();
 
         }
 
-        if (other.CompareTag("Projectile")) 
+        if (other.CompareTag("Projectile")) // Verifica se a tag do objeto em que o inimigo está colidindo é igual à "Projectile", se for verdadeiro, puxará o metódo "AddPoints(10f)", com um parâmetro de 10f que serão acrescentados na pontuação do jogador e o "Explode()"
         {
             playerScript.AddPoints(10f);
             Explode();
         }
     }
 
-    public void Explode()
+    public void Explode() 
     {
-        if (explosionEffect != null)
+        if (explosionEffect != null) // Verifica se o efeito de explosão é diferente de nulo e caso seja, executará os códigos abaixos que determinam a posição do efeito de explosão (aonde será feita a explosão) e instancia o efeito de explosão na posição determinada no vector3. Além disso, o gameObject será destruído (o qual utiliza de base para determinar qual objeto vai destruir o OnTriggerEnter)
         {
             Vector3 explosionPosition = transform.position + Vector3.up * explosionHeightOffset;
             Instantiate(explosionEffect, explosionPosition, Quaternion.identity);
         }
         Destroy(gameObject);
     }
-    public void OnDestroy()
+
+    public void OnDestroy() //Método do próprio Unity que serve como uma forma de avisar ao script de Wave que um inimigo foi morto
     {
         waveManager.EnemyKilled();
     }
@@ -159,152 +160,162 @@ using TMPro;
 
 public class Player : MonoBehaviour
 {
-    public int lives = 3;
-    public float points = 0f;
-    public TMP_Text pointsText;
-    public TMP_Text livesText;
-    public GameObject gameOverScreen;
-    public GameObject pauseMenu;
+   using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using TMPro;
+using Unity.VisualScripting;
 
-    public GameObject projectilePrefab;
-    public Transform shootPoint;
-    public float projectileSpeed = 20f;
-    public float fireRate = 0.5f;
-    private float lastShotTime;
+public class Player : MonoBehaviour
+{
+    public int lives = 3; // número de vidas do jogador
+    public float points = 0f; // pontuação inicial do jogador
+    public TMP_Text pointsText; // referência ao elemento de texto para mostrar a pontuação
+    public TMP_Text livesText; // referência ao elemento de texto para mostrar as vidas restantes
+    public GameObject gameOverScreen; // tela de "Game Over"
+    public GameObject pauseMenu; // menu de pausa
 
-    private Animator animator;
-    public CharacterController controller;
-    public Transform playerObj;
-    public Transform cam;
-    public float moveSpeed = 5f;
-    public float gravity = -9.81f;
-    private Vector3 velocity;
-    private bool isGrounded;
+    public GameObject projectilePrefab; // prefab do projétil para tiros
+    public Transform shootPoint; // ponto de origem do disparo
+    public float projectileSpeed = 20f; // velocidade do projétil
+    public float fireRate = 0.5f; // tempo mínimo entre disparos
+    private float lastShotTime; // marca de tempo do último disparo
 
+    private Animator animator; // controlador de animação
+    public CharacterController controller; // componente responsável pelo movimento do jogador
+    public Transform playerObj; // objeto do jogador para rotação
+    public Transform cam; // transform da câmera para referência de direção
+    public float moveSpeed = 5f; // velocidade de movimento do jogador
+    public float gravity = -9.81f; // intensidade da gravidade
+    private Vector3 velocity; // velocidade do jogador
+    private bool isGrounded; // indica se o jogador está no chão
 
+    private bool isPaused = false; // estado de pausa do jogo
 
-    private bool isPaused = false;
-
-    private void Start()
+    private void Start() // função de start
     {
-        UpdateUI();
-        gameOverScreen.SetActive(false);
-        pauseMenu.SetActive(false);
-        animator = GetComponent<Animator>();
+        UpdateUI(); // starta função de update do UI
+        gameOverScreen.SetActive(false); // desativa o tela de gameover
+        pauseMenu.SetActive(false); // desativa a tela do menu de pausa
+        animator = GetComponent<Animator>(); // obtem o componente do animator para utiliza-lo
 
     }
 
-    private void Update()
+    private void Update() // função de update
     {
-        Pause();
+        Pause(); // chama a função de pausa
 
-        if (Input.GetMouseButton(0) && Time.time >= lastShotTime + fireRate)
+        if (Input.GetMouseButton(0) && Time.time >= lastShotTime + fireRate)  // controle do tiro
         {
-            FireProjectile();
-            lastShotTime = Time.time;
+            FireProjectile(); // atira
+            lastShotTime = Time.time; // atualiza o tempo até o último disparo
         }
 
-        isGrounded = controller.isGrounded;
+        isGrounded = controller.isGrounded; // controle de gravidade
 
-        if (isGrounded && velocity.y < 0)
+        if (isGrounded && velocity.y < 0) // controle de movimento e gravidade
         {
-            velocity.y = -2f;
+            velocity.y = -2f; // reseta a velociade vertical ao tocar o chão
         }
 
-        float horizontalInput = Input.GetAxisRaw("Horizontal");
-        float verticalInput = Input.GetAxisRaw("Vertical");
+        // obtem as entradas do jogador 
+        float horizontalInput = Input.GetAxisRaw("Horizontal"); // obtem os inputs horizontais do jogador
+        float verticalInput = Input.GetAxisRaw("Vertical"); // obtem os inputs verticais do jogador
 
-        Vector3 forward = new Vector3(cam.forward.x, 0, cam.forward.z).normalized;
+        // determina a direção de movimento baseada na câmera
+        Vector3 forward = new Vector3(cam.forward.x, 0, cam.forward.z).normalized; 
         Vector3 right = new Vector3(cam.right.x, 0, cam.right.z).normalized;
         Vector3 moveDir = (forward * verticalInput + right * horizontalInput).normalized;
 
-        controller.Move(moveDir * moveSpeed * Time.deltaTime);
+        controller.Move(moveDir * moveSpeed * Time.deltaTime); // move o jogador
 
-        velocity.y += gravity * Time.deltaTime;
+        velocity.y += gravity * Time.deltaTime; // aplica a gravidade
         controller.Move(velocity * Time.deltaTime);
 
-        bool isMoving = moveDir.magnitude > 0.1f;
-        if (animator != null)
+        bool isMoving = moveDir.magnitude > 0.1f; // 
+        if (animator != null) // se existir uma animação, ou seja, for diferente de nula
         {
-            animator.SetBool("Run", isMoving);
-            animator.SetBool("Idle", !isMoving);
+            animator.SetBool("Run", isMoving); // ativa ou desativa a animação com base no boolean
+            animator.SetBool("Idle", !isMoving); // ativa ou desativa a animação com base no boolean
         }
 
-        LookAtMouse();
+        LookAtMouse(); // chama a função de olhar para o mouse
     }
 
-    private void LookAtMouse()
+    private void LookAtMouse() // função de olhar para o mouse
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out RaycastHit hitInfo))
+        // raycast é uma linha imaginaria com um ponto de origem e uma direção
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition); // camera.main = se refere a camera principal ; ScreenPointToRay(Input.mousePosition) = converte a posição do mouse na tela para uma linha imaginaria que parte da camera principal para o espaço 3D ; Input.mousePosition = obtem a posição do cursor do mouse em coordenadas da tela 
+        if (Physics.Raycast(ray, out RaycastHit hitInfo)) // Physics.Raycast() = lança um raio, verifica se colidiu com algum objeto com colisor e retorna true se houver colisão e false se não ; out RaycastHit hitInfo = se o raio colidir com algo, as informações sobre o ponto de impacto são armazenadas na variável hitInfo do tipo RaycastHit ; out significa que essa variável será preenchida com os dados do impacto ; ray é o raio
         {
-            Vector3 targetPoint = hitInfo.point;
-            Vector3 lookDirection = targetPoint - playerObj.position;
-            lookDirection.y = 0;
-            playerObj.rotation = Quaternion.LookRotation(lookDirection);
+            Vector3 targetPoint = hitInfo.point; // ponto onde o raio atinge
+            Vector3 lookDirection = targetPoint - playerObj.position; // calculo para saber a direção de olhar com base na position do player
+            lookDirection.y = 0; // ignora rotação no eixo y 
+            playerObj.rotation = Quaternion.LookRotation(lookDirection); // atualiza a rotação do jogador
         }
     }
 
-    void FireProjectile()
+    void FireProjectile() // função de atirar o projétil 
     {
-        if (projectilePrefab == null || shootPoint == null) return;
-        GameObject projectile = Instantiate(projectilePrefab, shootPoint.position, shootPoint.rotation);
-        Rigidbody rb = projectile.GetComponent<Rigidbody>();
-        if (rb != null)
+        if (projectilePrefab == null || shootPoint == null) return; // se o alguma dessa variáveis for nula ele encerra a execução da função
+        GameObject projectile = Instantiate(projectilePrefab, shootPoint.position, shootPoint.rotation); // instancia o projétil
+        Rigidbody rb = projectile.GetComponent<Rigidbody>(); // obtem o componente de rigidbody para controlar ele
+        if (rb != null) // se existir um rigidbody, ou seja, se for diferente de nulo
         {
-            rb.velocity = shootPoint.forward * projectileSpeed;
+            rb.velocity = shootPoint.forward * projectileSpeed; // define a velocidade do projétil
         }
-        Destroy(projectile, 5f);
+        Destroy(projectile, 5f); // destrói o prójetil após 5 segundos
     }
 
-    private void Pause()
+    private void Pause() // função de pausa do jogo
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape)) // se a tecla de escape(ESC) for pressionada
         {
-            isPaused = !isPaused;
+            isPaused = !isPaused; // transforma o boolean em verdadeiro, falando que está pausado
 
-            if (isPaused)
+            if (isPaused) // se estiver pausado
             {
-                Time.timeScale = 0f;
-                pauseMenu.SetActive(true);
+                Time.timeScale = 0f; // o tempo para enquanto está pausado
+                pauseMenu.SetActive(true); // ativa o menu de pausa
             }
-            else
+            else // senão
             {
-                Time.timeScale = 1f;
-                pauseMenu.SetActive(false);
+                Time.timeScale = 1f; // o tempo volta a andar novamente
+                pauseMenu.SetActive(false); // desativa o menu de pausa
             }
         }
     }
 
-    public void TakeDamage()
+    public void TakeDamage() // função que serve para dar dano ao jogador
     {
-        lives--;
+        lives--; // reduz as vidas do personagem
 
-        if (lives <= 0)
+        if (lives <= 0) //se as vidas forem menor ou igual a 0
         {
-            GameOver();
+            GameOver(); // chama a função de gameover
         }
-        else
+        else  // senão
         {
-            UpdateUI();
+            UpdateUI(); // chama função de atualizar a UI
         }
     }
 
-    public void AddPoints(float amount)
+    public void AddPoints(float amount) // função de adicionar os pontos, cria um parametro float de quantidade
     {
-        points += amount;
-        UpdateUI();
+        points += amount; // Adiciona a pontuação
+        UpdateUI();  // Atualiza a UI
     }
 
-    private void UpdateUI()
+    private void UpdateUI() // função de atualizar a UI
     {
-        pointsText.text = "Points: " + points.ToString();
-        livesText.text = "Lives: " + lives.ToString();
+        pointsText.text = "Points: " + points.ToString(); // Atualiza o texto de pontuação e transforma os pontos em texto
+        livesText.text = "Lives: " + lives.ToString(); // Atualiza o texto de vidas e transforma as vidas em texto
     }
 
-    private void GameOver()
+    private void GameOver() // funcão de derrota
     {
-        gameOverScreen.SetActive(true);
+        gameOverScreen.SetActive(true); // Ativa a tela de gameover
+        Time.timeScale = 0f; // Para o tempo para evitar que o jogo rode, enquanto no gameover
     }
 }
 ```
@@ -316,17 +327,17 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other) // Se houver uma colisão com o projétil do jogador, executará os códigos abaixo:
     {
-        if (other.CompareTag("Enemy"))
+        if (other.CompareTag("Enemy")) // Verifica se a tag do objeto é igual a "Enemy"
         {
 
-            Enemy enemyScript = other.GetComponent<Enemy>();
-            if (enemyScript != null)
+            Enemy enemyScript = other.GetComponent<Enemy>(); // Pega o script do inimigo para usar do método "Explode"
+            if (enemyScript != null) // Se o script do inimigo for diferente de null, ou seja, existir no GameObject acertado, fará a linha de código abaixo
             {
-                enemyScript.Explode();
+                enemyScript.Explode(); // Puxa o método "Explode" do inimigo
             }
-            Destroy(gameObject);
+            Destroy(gameObject); // Destroe o GameObject se o CompareTag for verdadeiro
         }
     }
 }
@@ -341,53 +352,53 @@ using UnityEngine;
 
 public class Wave : MonoBehaviour
 {
-    public GameObject enemyPrefab;
-    public Transform[] spawnPoints; 
-    public TMP_Text waveText; 
-    private int currentWave = 1; 
-    private int enemiesToSpawn = 2; 
-    private int enemiesAlive = 0;
+    public GameObject enemyPrefab; // Prefab do inimigo
+    public Transform[] spawnPoints; // Array dos spawnPoints (aonde o inimigo será spawnado)
+    public TMP_Text waveText; // Elemento de texto que aparece na tela
+    private int currentWave = 1; // Wave atual
+    private int enemiesToSpawn = 2; // Inimigos para serem spawnados na wave
+    private int enemiesAlive = 0; // "Verificador" (serve para determinar se terão inimigos na cena ou não)
 
     private void Start()
     {
-        UpdateWaveText(); 
-        StartCoroutine(SpawnWave()); 
+        UpdateWaveText(); // Inicia a Coroutine
+        StartCoroutine(SpawnWave()); // Inicia a atualização do texto de valor da wave (é visível dentro do jogo)
     }
 
-    private IEnumerator SpawnWave()
+    private IEnumerator SpawnWave() // Serve para criar um "Delay" de uma wave para outra e instanciar os objetos já predefinidos dentro do script. Utiliza de um array "spawnPoints" para criar várias posições em que os objetos poderão ser spawnados
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(2f); // Time
 
-        for (int i = 0; i < enemiesToSpawn; i++)
+        for (int i = 0; i < enemiesToSpawn; i++) // Verifica se i é menor que o valor de inimigos para spawnar, assim se for, repetirá a instanciação dos objetos até chegar ao valor de inimigos que estão na cena (é tipo um parâmetro: tem 3 inimigos para spawnar, será instanciado até que i seja igual à 3, ou seja, criará 3 objetos)
         {
-            Transform spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
-            Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);
+            Transform spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)]; // Determina a posição do spawnPoints de forma aleatória
+            Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation); // Instancia o prefab do inimigo utilizando a posição randomizada do "spawnPoint"
 
             enemiesAlive++; 
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.5f); // Time
         }
     }
 
     public void EnemyKilled()
     {
-        enemiesAlive--; 
-        if (enemiesAlive <= 0)
+        enemiesAlive--; // Diminue o valor de inimigos vivos
+        if (enemiesAlive <= 0) // Verifica se o valor de inimigos vivos no cenário é maior que 0, senão, chamará o método "AdvanceWave()"
         {
-            AdvanceWave();
+            AdvanceWave(); // Avança a wave, aumenta a quantidade de inimigos, recomeça a Coroutine e atualiza o valor de wave aparecendo na tela
         }
     }
 
-    private void AdvanceWave()
+    private void AdvanceWave() 
     {
-        currentWave++; 
-        enemiesToSpawn += 3; 
-        UpdateWaveText();
-        StartCoroutine(SpawnWave()); 
+        currentWave++; // Aumenta o valor da wave atual
+        enemiesToSpawn += 3; // Aumenta o valor de inimigos para spawnarem
+        UpdateWaveText(); // Atualiza o elemento de texto na tela do jogo (wave)
+        StartCoroutine(SpawnWave()); // Reinicia a Coroutine
     }
 
-    private void UpdateWaveText()
+    private void UpdateWaveText() // Atualiza o elemento de texto da wave
     {
-        waveText.text = "Wave: " + currentWave.ToString();
+        waveText.text = "Wave: " + currentWave.ToString(); // Concatena o curretWanve para atualizar o valor que aparecerá na tela com base no valor da wave atual
     }
 }
 ```
@@ -401,6 +412,8 @@ using UnityEngine.SceneManagement;
 
 public class Buttons : MonoBehaviour
 {
+
+// Todos os métodos abaixos servem unicamente para transitar entre as cenas do jogo, sendo assim, puxadas no "OnClick"
     public void StartGame()
     {
         SceneManager.LoadScene("Armazem");
