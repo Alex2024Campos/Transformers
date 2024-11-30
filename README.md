@@ -547,6 +547,7 @@ _________________________________________________________________
 
 # Descrição da Organização e Execução das Tarefas:
 Alex: Para mim, ambos da dupla trabalharam bem e participaram em todo o projeto ao todo, seja fazendo parte de toda a produção ou auxiliando na correção de problemas. A principal parte que fiz foi a visual (mapa), a codificação da Wave e do Inimigo (que depois viria a ser modificada pelo Felipe para funcionar com os projéteis), a parte da interface do jogo e a documentação de nosso projeto, além de procurar tentar ajudar e procurar ajuda quando precisava. No geral, o projeto foi bem desenvolvido e separado, buscando dividir as tarefas de forma que coincidissem com os pontos fortes de cada um, e claro, com cada um não se limitando somente na parte que mais tivesse facilidade, mas também auxiliando o outro quando houvesse necessidade.
+
 Felipe: 
 
 <br>
