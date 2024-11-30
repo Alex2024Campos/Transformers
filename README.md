@@ -487,7 +487,7 @@ _________________________________________________________________
 
 # Diagrama UML:
 
-![Diagrama_UML_Transformers](https://github.com/user-attachments/assets/fe815743-3303-41fa-81fe-8e11d25fab43)
+![Diagrama_UML_Transformers (3)](https://github.com/user-attachments/assets/4588b50b-2aea-4ae3-b009-79774e2e8add)
 
 _________________________________________________________________
 
